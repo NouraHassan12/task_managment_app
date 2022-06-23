@@ -1,0 +1,36 @@
+.cardContainer {
+  margin: 0 0 8px 0;
+  position: relative;
+  max-width: 100%;
+  word-wrap: break-word;
+  background-color: #212121 !important;
+  color: rgb(182, 182, 182) !important;
+  padding: 7px 0px;
+}
+.deleteIcon {
+  position: absolute;
+  cursor: pointer;
+  right: 5px;
+  bottom: 30px;
+  opacity: 0.5;
+  color: #e01902;
+}
+.editIcon {
+  position: absolute;
+  cursor: pointer;
+  right: 5px;
+  bottom: -4px;
+  opacity: 0.5;
+  color: #45b645;
+}
+.edittextAreaCard {
+  min-height: 50px;
+  min-width: 272px;
+  padding: 6px 8px 2px;
+  background-color: #212121 !important;
+  color: rgb(182, 182, 182) !important;
+}
+.contentStyle {
+  background-color: #212121;
+  color: rgb(182, 182, 182);
+}

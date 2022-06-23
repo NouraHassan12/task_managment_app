@@ -1,25 +1,55 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import TaskBoard from "./Components/Board/Board";
+import { connect } from "react-redux";
+import { DragDropContext } from "react-beautiful-dnd";
+import { sort } from "./Redux/Actions/cardsActions";
+function App({ lists, cards, sort }) {
+  let listOrder = ["list-0", "list-1", "list-2"];
 
-function App() {
+  const onDragEnd = (result) => {
+    const { destination, source, draggableId, type } = result;
+
+    if (!destination) {
+      return;
+    }
+
+    sort(
+      source.droppableId,
+      destination.droppableId,
+      source.index,
+      destination.index,
+      draggableId,
+      type
+    );
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <DragDropContext onDragEnd={onDragEnd}>
+        <div className="boardlistsContainer">
+          {listOrder.map((listID, index) => {
+            const list = lists[listID];
+            if (list) {
+              const listCards = list.cards.map((cardID) => cards[cardID]);
+
+              return (
+                <TaskBoard
+                  listID={list.id}
+                  key={list.id}
+                  title={list.title}
+                  cards={listCards}
+                  index={index}
+                />
+              );
+            }
+          })}
+        </div>
+      </DragDropContext>
+    </>
   );
 }
 
-export default App;
+const mapStateToProps = (state) => ({
+  lists: state.lists,
+  cards: state.cards,
+});
+export default connect(mapStateToProps, { sort })(App);

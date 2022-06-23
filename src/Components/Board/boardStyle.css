@@ -1,0 +1,26 @@
+.container {
+  background-color: #383838;
+  border-radius: 3;
+  width: 300px;
+  height: 100%;
+  padding: 8px;
+  margin-right: 10px;
+}
+@media screen and (max-width: 900px) {
+  .container {
+    margin-top: 40px;
+    width: 500px;
+  }
+}
+@media screen and (max-width: 530px) {
+  .container {
+    margin-top: 40px;
+    width: 370px;
+  }
+}
+@media screen and (max-width: 390px) {
+  .container {
+    margin-top: 40px;
+    width: 270px;
+  }
+}

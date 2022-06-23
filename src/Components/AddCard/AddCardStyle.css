@@ -1,0 +1,31 @@
+.button {
+  color: inherit;
+  opacity: 0.5;
+  background-color: inherit;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding-left: 10px;
+  border-radius: 3px;
+  width: 272px;
+}
+.textAreaCard {
+  min-height: 80px;
+  min-width: 272px;
+  padding: 6px 8px 2px;
+}
+
+.addBtn {
+  color: white !important;
+  background-color: #1a771aa1 !important;
+  height: 30px;
+}
+.closeIcon {
+  margin-left: 8px;
+  cursor: pointer;
+}
+.btnGroup {
+  display: flex;
+  align-items: center;
+  margin-top: 8px;
+}
