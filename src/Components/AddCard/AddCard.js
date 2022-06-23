@@ -50,7 +50,7 @@ function AddCard({ listID, addCard }) {
                 value={cardContent}
                 style={{
                   resize: "none",
-                  width: "100",
+                  width: "100%",
                   border: "none",
                   outline: "none",
                   overflow: "hidden",
